@@ -16,6 +16,9 @@
         .edit-button{
             background-color: #10B981;
         }
+        .delete-button{
+            background-color: #EF4444;
+        }
     </style>
     <div class="space-y-6">
         <div class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
@@ -80,6 +83,7 @@
                                 <td>
                                     <a href="{{ route("posts.show" , $post->slug) }} " class="button view-button">View</a>
                                     <a href="{{ route("posts.edit" , $post->slug) }}" class="button edit-button">Edit</a>
+                                    <a href="{{ route("posts.destroy" , $post->slug) }}" class="button delete-button">Delete</a>
                                 </td>
                             </tr>
                         @empty

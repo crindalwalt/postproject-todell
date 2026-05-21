@@ -36,7 +36,7 @@
                             <th class="px-5 py-4 font-medium">Title</th>
                             <th class="px-5 py-4 font-medium">Slug</th>
                             <th class="px-5 py-4 font-medium">Description</th>
-                            <th class="px-5 py-4 font-medium">User ID</th>
+                            <th class="px-5 py-4 font-medium">User</th>
                             <th class="px-5 py-4 font-medium">Status</th>
                             <th class="px-5 py-4 font-medium">Image</th>
                             <th class="px-5 py-4 font-medium">Created</th>

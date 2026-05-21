@@ -24,6 +24,7 @@ Route::prefix("dashboard")->middleware(['auth', 'verified'])->group(function () 
    Route::post("/posts/store", [PostController::class, "store"])->name("posts.store");
    Route::get("/posts/{post:slug}/show", [PostController::class, "show"])->name("posts.show");
    Route::get("/posts/{post:slug}/edit", [PostController::class, "edit"])->name("posts.edit");
+   Route::get("/posts/{post:slug}/destroy", [PostController::class, "destroy"])->name("posts.destroy");
    Route::put("/posts/{post:slug}/update", [PostController::class, "update"])->name("posts.update");
 
     # users

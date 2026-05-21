@@ -125,13 +125,15 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+        return redirect()->route("myposts.index")->with("success", "Post deleted successfully.");
     }
 
 
 
     public function myPosts()
     {
+
         $user = Auth::user();
         $posts = $user->posts;
         return view("admin.posts.my-posts", compact("posts"));
