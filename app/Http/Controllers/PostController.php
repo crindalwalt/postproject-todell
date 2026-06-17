@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
+use App\Mail\NewPostNotification;
 use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 
 class PostController extends Controller
@@ -60,6 +62,10 @@ class PostController extends Controller
             "status" => $status,
             "image" => $imagePath,
         ]);
+
+        //send email;
+
+        Mail::to("aimenmustafa1828630@gmail.com")->send(new NewPostNotification($request->title, Auth::user()->name, $request->description, route('posts.show', $slug)));
 
         return redirect()->route("posts.index")->with("success", "Post created successfully.");
     }
